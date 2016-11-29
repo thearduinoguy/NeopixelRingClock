@@ -1,10 +1,8 @@
 #include <Adafruit_NeoPixel.h>
-
-#define PIN D5
-
 #include <ESP8266WiFi.h>
 #include "TimeClient.h"
 
+#define PIN D5
 long lastUpdate = millis();
 long lastSecond = millis();
 
@@ -77,14 +75,12 @@ void loop()
     strip.setPixelColor(currentSecond / 2.5, 0, 0, 255);
     strip.setPixelColor(currentMinute / 2.5, 0, 255, 0);
     strip.setPixelColor(currentHour * 2, 255, 0, 0);
-
-
     strip.show();
   }
-
 }
 
-void updateTime() {
+void updateTime() 
+{
   hours = timeClient.getHours();
   minutes = timeClient.getMinutes();
   seconds = timeClient.getSeconds();
@@ -94,5 +90,3 @@ void updateTime() {
   currentSecond = seconds.toInt();
   lastUpdate = millis();
 }
-
-
