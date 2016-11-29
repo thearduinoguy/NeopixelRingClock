@@ -4,7 +4,6 @@
 
 #include <ESP8266WiFi.h>
 #include "TimeClient.h"
-#include <WiFiUdp.h>
 
 long lastUpdate = millis();
 long lastSecond = millis();
